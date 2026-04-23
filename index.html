@@ -430,9 +430,8 @@
 
           <form
             class="contact-form"
-            action="mailto:milosh.spasikj@gmail.com"
-            method="post"
-            enctype="text/plain"
+            action=https://formspree.io/f/mbdqqywo
+            method="POST"
           >
             <label>
               Your email
@@ -456,11 +455,17 @@
             <label>
               Biggest concern
               <textarea
-                name="concern"
+                name="message"
                 rows="4"
                 placeholder="Tell me what feels messy, fragile, or unclear."
               ></textarea>
             </label>
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="New AXIS audit request"
+            />
 
             <button class="button button-primary" type="submit">
               Request audit
@@ -468,9 +473,7 @@
 
             <p class="form-note">
               Prefer email? Write directly to
-              <a href="mailto:milosh.spasikj@gmail.com"
-                >milosh.spasikj@gmail.com</a
-              >.
+              <a href="mailto:info@axis-ux.com">info@axis-ux.com</a>.
             </p>
           </form>
         </div>
