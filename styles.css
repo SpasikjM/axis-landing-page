@@ -982,7 +982,7 @@ textarea {
 }
 
 .form-note {
-  color: var(--color-text-muted);
+  color: var(--color-text-inverse);
   font-size: var(--text-xs);
 }
 
