@@ -1127,3 +1127,26 @@ textarea {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Fix form note visibility in light mode */
+.offer-card .contact-form .form-note {
+  color: #667085 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.offer-card .contact-form .form-note a {
+  color: #1d4ed8 !important;
+  font-weight: 700;
+  text-decoration-color: rgba(29, 78, 216, 0.35);
+}
+
+/* Keep it good in dark mode */
+[data-theme="dark"] .offer-card .contact-form .form-note {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+[data-theme="dark"] .offer-card .contact-form .form-note a {
+  color: #8bb8ff !important;
+  text-decoration-color: rgba(139, 184, 255, 0.45);
+}
