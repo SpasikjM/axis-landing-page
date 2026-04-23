@@ -47,6 +47,9 @@
   --color-warning: #a45b2c;
   --color-error: #a53a52;
   --color-success: #47703c;
+  --page-top: #fbfdff;
+  --page-bottom: #ffffff;
+  --hero-glow: 11%;
 
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
@@ -62,21 +65,21 @@
 }
 
 [data-theme='dark'] {
-  --color-bg: #0e1114;
-  --color-surface: #14191d;
-  --color-surface-2: #191f24;
-  --color-surface-offset: #20272d;
-  --color-surface-dynamic: #2a333a;
-  --color-border: #303941;
-  --color-divider: #242c32;
-  --color-text: #edf0ee;
-  --color-text-muted: #9aa6ad;
-  --color-text-faint: #68737a;
-  --color-text-inverse: #0e1114;
-  --color-primary: #79b7c8;
-  --color-primary-hover: #9bcbd8;
-  --color-primary-active: #b9dce4;
-  --color-primary-highlight: #1d333b;
+  --color-bg: #070b12;
+  --color-surface: #0d141d;
+  --color-surface-2: #111a24;
+  --color-surface-offset: #151f2a;
+  --color-surface-dynamic: #203041;
+  --color-border: #263545;
+  --color-divider: #1c2835;
+  --color-text: #f5f8fb;
+  --color-text-muted: #aab7c4;
+  --color-text-faint: #708090;
+  --color-text-inverse: #071019;
+  --color-primary: #7dd7ef;
+  --color-primary-hover: #9fe4f5;
+  --color-primary-active: #c1f0fb;
+  --color-primary-highlight: #102d3a;
   --color-data-cyan: #38c7ef;
   --color-data-violet: #9b8cff;
   --color-data-amber: #ffb86b;
@@ -84,6 +87,9 @@
   --color-warning: #db955d;
   --color-error: #e2768b;
   --color-success: #8fc27f;
+  --page-top: #0b1119;
+  --page-bottom: #070b12;
+  --hero-glow: 18%;
   --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.35), 0 8px 24px oklch(0 0 0 / 0.18);
   --shadow-md: 0 12px 32px oklch(0 0 0 / 0.36), 0 32px 80px oklch(0 0 0 / 0.28);
 }
@@ -114,8 +120,8 @@ body {
   font-size: var(--text-base);
   color: var(--color-text);
   background:
-    radial-gradient(circle at 50% -12rem, color-mix(in oklab, var(--color-primary) 11%, transparent), transparent 34rem),
-    linear-gradient(180deg, #fbfdff 0%, var(--color-bg) 40%, #ffffff 100%);
+    radial-gradient(circle at 50% -12rem, color-mix(in oklab, var(--color-primary) var(--hero-glow), transparent), transparent 34rem),
+    linear-gradient(180deg, var(--page-top) 0%, var(--color-bg) 42%, var(--page-bottom) 100%);
 }
 
 body::before {
@@ -239,6 +245,11 @@ textarea {
   backdrop-filter: blur(18px);
 }
 
+[data-theme='dark'] .header-inner {
+  background: color-mix(in oklab, var(--color-surface) 82%, transparent);
+  border-color: color-mix(in oklab, white 12%, transparent);
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -331,6 +342,12 @@ textarea {
   border-color: color-mix(in oklab, var(--color-text) 12%, transparent);
 }
 
+[data-theme='dark'] .button-secondary {
+  color: var(--color-text);
+  background: color-mix(in oklab, var(--color-surface-2) 88%, white 4%);
+  border-color: color-mix(in oklab, white 13%, transparent);
+}
+
 .button:hover {
   transform: translateY(-2px);
 }
@@ -396,6 +413,14 @@ textarea {
   border: 1px solid color-mix(in oklab, var(--color-text) 12%, transparent);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
+}
+
+[data-theme='dark'] .hero-panel {
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in oklab, var(--color-data-cyan) 14%, transparent), transparent 16rem),
+    radial-gradient(circle at 86% 12%, color-mix(in oklab, var(--color-data-violet) 13%, transparent), transparent 15rem),
+    linear-gradient(180deg, #111d28, #0b1118);
+  border-color: color-mix(in oklab, white 13%, transparent);
 }
 
 .hero-panel::before {
@@ -471,6 +496,16 @@ textarea {
   place-items: center;
 }
 
+[data-theme='dark'] .score-ring {
+  background:
+    radial-gradient(circle at center, #0f1923 0 52%, transparent 53%),
+    conic-gradient(
+      var(--color-data-rose) 0 15%,
+      var(--color-data-amber) 15% 42%,
+      color-mix(in oklab, white 13%, transparent) 42% 100%
+    );
+}
+
 .score-ring span {
   font-family: var(--font-display);
   font-size: var(--text-xl);
@@ -505,6 +540,14 @@ textarea {
   background: color-mix(in oklab, var(--color-surface-2) 82%, transparent);
   border: 1px solid color-mix(in oklab, var(--color-text) 11%, transparent);
   border-radius: var(--radius-lg);
+}
+
+[data-theme='dark'] .signal-stack article,
+[data-theme='dark'] .audit-card,
+[data-theme='dark'] .deliverable-list article,
+[data-theme='dark'] .outcomes-grid article {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--color-surface-2) 92%, white 3%), var(--color-surface));
+  border-color: color-mix(in oklab, white 11%, transparent);
 }
 
 .signal-stack article {
@@ -774,6 +817,11 @@ textarea {
   border-block: 1px solid color-mix(in oklab, var(--color-text) 8%, transparent);
 }
 
+[data-theme='dark'] .process-section {
+  background: linear-gradient(180deg, #121a22, #0a0f16);
+  border-color: color-mix(in oklab, white 9%, transparent);
+}
+
 .process-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1fr);
@@ -794,6 +842,11 @@ textarea {
   background: var(--color-bg);
   border: 1px solid color-mix(in oklab, var(--color-text) 10%, transparent);
   border-radius: var(--radius-lg);
+}
+
+[data-theme='dark'] .process-list li {
+  background: #091018;
+  border-color: color-mix(in oklab, white 12%, transparent);
 }
 
 .process-list span {
@@ -846,17 +899,38 @@ textarea {
   box-shadow: var(--shadow-md);
 }
 
+[data-theme='dark'] .offer-card {
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at 0% 0%, color-mix(in oklab, var(--color-primary) 18%, transparent), transparent 28rem),
+    linear-gradient(135deg, #0d1722, #070b12 70%);
+  border: 1px solid color-mix(in oklab, white 12%, transparent);
+}
+
 .offer-card .eyebrow,
 .offer-card p {
   color: color-mix(in oklab, var(--color-text-inverse) 72%, transparent);
+}
+
+[data-theme='dark'] .offer-card .eyebrow,
+[data-theme='dark'] .offer-card p {
+  color: var(--color-text-muted);
 }
 
 .offer-card .eyebrow {
   color: #9fb5ff;
 }
 
+[data-theme='dark'] .offer-card .eyebrow {
+  color: var(--color-primary);
+}
+
 .offer-card h2 {
   color: var(--color-text-inverse);
+}
+
+[data-theme='dark'] .offer-card h2 {
+  color: var(--color-text);
 }
 
 .contact-form {
@@ -867,6 +941,11 @@ textarea {
   background: var(--color-surface);
   border: 1px solid color-mix(in oklab, white 12%, transparent);
   border-radius: var(--radius-xl);
+}
+
+[data-theme='dark'] .contact-form {
+  background: color-mix(in oklab, var(--color-surface-2) 96%, white 2%);
+  border-color: color-mix(in oklab, white 12%, transparent);
 }
 
 .contact-form label {
