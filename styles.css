@@ -986,6 +986,11 @@ textarea {
   font-size: var(--text-xs);
 }
 
+.form-note p {
+  color: var(--color-text-inverse);
+  font-size: var(--text-xs);
+}
+
 .form-note a {
   color: var(--color-primary);
   font-weight: 900;
