@@ -982,20 +982,20 @@ textarea {
 }
 
 .form-note {
-  color: var(--color-text-inverse);
-  font-size: var(--text-xs);
-}
-
-.form-note p {
-  color: var(--color-text-inverse);
-  font-size: var(--text-xs);
+  color: #6b7280;
 }
 
 .form-note a {
-  color: var(--color-primary);
-  font-weight: 900;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .form-note {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+[data-theme="dark"] .form-note a {
+  color: #8bb8ff;
 }
 
 .site-footer {
